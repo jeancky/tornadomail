@@ -6,7 +6,7 @@ import codecs
 from decimal import Decimal
 
 from .functional import Promise
-from .compat import basestring, unicode
+from .compat import basestring, unicode, PY3
 
 
 class TornadomainUnicodeDecodeError(UnicodeDecodeError):
@@ -78,7 +78,7 @@ def force_unicode(s, encoding='utf-8', strings_only=False, errors='strict'):
                 except:
                     try:
                         if PY3:
-                            s = str(s).encode(encoding, errors)
+                            s = str(s)
                         else:
                             s = unicode(str(s), encoding, errors)
                     except UnicodeEncodeError:
