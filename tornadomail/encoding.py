@@ -77,7 +77,10 @@ def force_unicode(s, encoding='utf-8', strings_only=False, errors='strict'):
                     s = s.decode(encoding, errors)
                 except:
                     try:
-                        s = unicode(str(s), encoding, errors)
+                        if PY3:
+                            s = str(s).encode(encoding, errors)
+                        else:
+                            s = unicode(str(s), encoding, errors)
                     except UnicodeEncodeError:
                         if not isinstance(s, Exception):
                             raise
