@@ -8,7 +8,7 @@ Installation
 ------------
 
 Using pip: `pip install tornadomail`
-From source: `git clone git://github.com/equeny/tornadomail.git; cd tornadomail; python setup.py install`
+From source: `git clone git://github.com/jeancky/tornadomail.git; cd tornadomail; python setup.py install`
 
 Usage
 -----
